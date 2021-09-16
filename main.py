@@ -35,13 +35,13 @@ agentld=""
 
 #用户配置！必须写！
 setting={
-    "account":'188********', #账号（手机号 ）「必填」
-    "password":'******', #密码 「必填」
+    "account":'15066595449', #账号（手机号 ）「必填」
+    "password":'Li13143524280', #密码 「必填」
     "sign":{
-        "long":'', #定位签到经度 「可空」
-        "lat":'', #定位签到纬度 「可空」
-        "address":'中国', #定位签到显示的地址 「必填」
-        "name":'张三', #签到姓名 「必填」
+        "long":'117.271626', #定位签到经度 「可空」
+        "lat":'36.640377', #定位签到纬度 「可空」
+        "address":'中国山东省济南市彩石镇博学路', #定位签到显示的地址 「必填」
+        "name":'李严才', #签到姓名 「必填」
         "img":['4c57ab8d2d25b6a60bcbd102a094b1b0'], #图片自定义之后再写，这里可以自己填入objectId列表就可以了，默认上传的图片是「图片加载失败」用来迷惑老师
         "sign_common":True, #是否开启普通签到 「True 开启 False 关闭」 默认开启，无需修改
         "sign_pic":True,    #是否开启照片签到 「True 开启 False 关闭」 默认开启，无需修改
@@ -49,7 +49,7 @@ setting={
         "sign_local":True,  #是否开启定位签到 「True 开启 False 关闭」 默认开启，无需修改
     },
     "other":{
-        "count":2, #每门课程只检测前N个活动 避免因课程活动太多而卡住
+        "count":5, #每门课程只检测前N个活动 避免因课程活动太多而卡住
         "sleep":60 #每次检测间隔时间（S）默认60秒 一分钟
     }
 }
@@ -221,8 +221,7 @@ def sign(course, aid, uid, name):
         sendWechat(push)
         print(get_time()+'签到信息如下\n' + '【学习通签到】\n课程：'+ courseName +'\n任课教师：'+ teacherName +'\n签到状态：'+ signTypeStr +'成功')
         print('签到完成，自动推出程序')
-        #签到过一次后自动退出，如果想全时间段运行，请把下方的“exit()”删除
-        exit()
+        #签到过一次后自动退出，如果想全时间段运行，请把下方的“exit()”删
     return signres
 #获取用户活动列表
 def gettask(course, courseId,classId,uid,cpi,name,sign_common,sign_pic,sign_hand,sign_local):
